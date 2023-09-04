@@ -1,4 +1,12 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import vuetify from './plugins/vuetify';
+import { loadFonts } from './plugins/webfontloader';
+import router from './router'; // Impor router Vue
 
-createApp(App).mount('#app')
+loadFonts();
+
+createApp(App)
+  .use(router) // Gunakan Vue Router
+  .use(vuetify)
+  .mount('#app');
